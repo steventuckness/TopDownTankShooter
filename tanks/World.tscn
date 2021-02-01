@@ -50,3 +50,5 @@ rotation = 2.9102
 
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_Shoot"]
+[connection signal="shoot" from="Paths/Path2D/PathFollow2D/EnemyTank" to="." method="_on_Tank_Shoot"]
+[connection signal="shoot" from="Paths/Path2D2/PathFollow2D/EnemyTank" to="." method="_on_Tank_Shoot"]

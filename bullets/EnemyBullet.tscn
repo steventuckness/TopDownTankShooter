@@ -7,9 +7,10 @@
 extents = Vector2( 16.0362, 12.0267 )
 
 [node name="EnemyBullet" instance=ExtResource( 1 )]
-speed = 350
+collision_mask = 3
+speed = 750
 damage = 10
-lifetime = 3.0
+lifetime = 0.5
 
 [node name="Sprite" parent="." index="0"]
 rotation = 3.14159

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -8,6 +8,11 @@
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 65.2988, 322.141, 0, 0, 0, 0, 67.7496, 383.127, 0, 0, 0, 0, 55.8442, 903.794, 0, 0, 0, 0, 77.274, 943.479, 0, 0, 0, 0, 118.547, 954.591, 0, 0, 0, 0, 924.152, 967.29, 0, 0, 0, 0, 949.551, 957.766, 0, 0, 0, 0, 964.631, 914.112, 0, 0, 0, 0, 970.187, 372.015, 0, 0, 0, 0, 950.345, 330.742, 0, 0, 0, 0, 905.104, 318.837, 0, 0, 0, 0, 129.658, 322.805, 0, 0, 0, 0, 65.2988, 322.141 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2048.68, 323.137, 0, 0, 0, 0, 1999.39, 334.748, 0, 0, 0, 0, 1988.75, 387.565, 0, 0, 0, 0, 1985.58, 2064.14, 0, 0, 0, 0, 2003.79, 2091.39, 0, 0, 0, 0, 2039.12, 2110.13, 0, 0, 0, 0, 2878.9, 2105.66, 0, 0, 0, 0, 2892.11, 1877.25, 0, 0, 0, 0, 2939.31, 1862.14, 0, 0, 0, 0, 3180.94, 1864.03, 0, 0, 0, 0, 3172.5, 318.556, 0, 0, 0, 0, 2048.68, 323.137 )
 }
 
 [node name="World" type="Node2D"]
@@ -22,6 +27,7 @@ tile_data = PoolIntArray( -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 562.269, 269.831 )
+collision_layer = 2
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -34,3 +40,13 @@ rotation = 1.53063
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 4 )]
 detect_radius = 400.0
+
+[node name="Path2D2" type="Path2D" parent="Paths"]
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D2"]
+position = Vector2( 2048.68, 323.137 )
+rotation = 2.9102
+
+[node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
+[connection signal="shoot" from="Player" to="." method="_on_Tank_Shoot"]

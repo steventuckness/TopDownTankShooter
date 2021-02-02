@@ -22,3 +22,6 @@ region_rect = Rect2( 388, 299, 32, 22 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Lifetime" parent="." index="2"]
+wait_time = 0.5

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://tanks/EnemyTank.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bullets/GunTurretBullet.tscn" type="PackedScene" id=2]
+
+[node name="GunTurret" instance=ExtResource( 1 )]
+Bullet = ExtResource( 2 )
+max_speed = 0
+gun_cooldown = 0.1
+
+[node name="Body" parent="." index="0"]
+region_rect = Rect2( 172, 89, 48, 48 )
+
+[node name="Turret" parent="." index="2"]
+region_rect = Rect2( 128, 105, 44, 28 )

@@ -7,7 +7,7 @@
 [ext_resource path="res://ui/UnitDisplay.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.3631, 18.0183 )
+extents = Vector2( 7.57797, 11.4664 )
 
 [node name="EnemyTank" instance=ExtResource( 1 )]
 position = Vector2( -0.157486, 0 )

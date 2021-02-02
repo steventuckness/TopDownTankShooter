@@ -19,7 +19,7 @@ func explode():
 	velocity = Vector2()
 	$Sprite.hide()
 	$Explosion.show()
-	$Explosion.play('smoke')
+	$Explosion.play()
 
 func _on_Bullet_body_entered(body):
 	explode()

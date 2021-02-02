@@ -17,3 +17,4 @@ func control(delta):
 
 	if Input.is_action_pressed('click'):
 		shoot()
+

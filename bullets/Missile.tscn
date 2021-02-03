@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://bullets/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=2]
+[ext_resource path="res://bullets/Missile.gd" type="Script" id=3]
+[ext_resource path="res://assets/spr_smoke_strip24.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17.9995, 8.04843 )
+
+[sub_resource type="CanvasItemMaterial" id=2]
+particles_animation = true
+particles_anim_h_frames = 24
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0.00340909, 0.306818 ), 0.0, 0.0, 0, 0, Vector2( 0.997727, 0.497727 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_random = 1.0
+scale_curve = SubResource( 4 )
+anim_speed = 1.0
+
+[node name="Missile" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+speed = 400
+damage = 15
+lifetime = 5.0
+steer_force = 25.0
+
+[node name="Sprite" parent="." index="0"]
+rotation = 3.14159
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 584, 244, 36, 16 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Trail" type="Particles2D" parent="." index="4"]
+show_behind_parent = true
+light_mask = -2147483647
+material = SubResource( 2 )
+position = Vector2( -14.5346, -0.744095 )
+amount = 30
+lifetime = 0.4
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 4 )

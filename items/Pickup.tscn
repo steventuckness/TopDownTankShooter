@@ -11,7 +11,7 @@
 resource_name = "bounce"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:position")
+tracks/0/path = NodePath("../Pickup/Sprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -20 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Shadow:scale")
+tracks/1/path = NodePath("../Pickup/Shadow:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0.25, 0.5 ), Vector2( 0.167, 0.333 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Shadow:modulate")
+tracks/2/path = NodePath("../Pickup/Shadow:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -47,7 +47,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.333333 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Icon:scale")
+tracks/3/path = NodePath("../Pickup/Icon:scale")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -59,7 +59,7 @@ tracks/3/keys = {
 "values": [ Vector2( 0.7, 0.7 ), Vector2( 0.5, 0.5 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Icon:self_modulate")
+tracks/4/path = NodePath("../Pickup/Icon:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -77,14 +77,14 @@ collision_mask = 2147483650
 script = ExtResource( 2 )
 
 [node name="Shadow" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.67938 )
+modulate = Color( 1, 1, 1, 0.781125 )
 self_modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 0, 25 )
-scale = Vector2( 0.210083, 0.419685 )
+scale = Vector2( 0.22275, 0.445172 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -9.0247 )
+position = Vector2( 0, -4.31157 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 420, 134, 56, 56 )
@@ -100,9 +100,9 @@ anims/bounce = SubResource( 2 )
 
 [node name="Icon" type="Sprite" parent="."]
 modulate = Color( 0.231373, 0.945098, 0.0823529, 1 )
-self_modulate = Color( 1, 1, 1, 0.51907 )
+self_modulate = Color( 1, 1, 1, 0.671687 )
 light_mask = -2147483647
 position = Vector2( 0, -85 )
-scale = Vector2( 0.651907, 0.651907 )
+scale = Vector2( 0.532831, 0.532831 )
 texture = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Pickup_body_entered"]

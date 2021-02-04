@@ -61,15 +61,16 @@ texture_progress = ExtResource( 5 )
 
 [node name="VSeparator" type="VSeparator" parent="Margin/Container"]
 margin_left = 238.0
-margin_right = 242.0
-margin_bottom = 560.0
+margin_right = 288.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 50, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AmmoGauge" type="TextureProgress" parent="Margin/Container"]
-margin_left = 246.0
-margin_right = 270.0
+margin_left = 292.0
+margin_right = 316.0
 margin_bottom = 560.0
 value = 60.0
 texture_progress = ExtResource( 6 )

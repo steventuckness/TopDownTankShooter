@@ -22,5 +22,5 @@ func _on_Tank_Shoot(bullet, _position, _direction, _target=null):
 	b.start(_position, _direction, _target)
 
 func _on_Player_dead():
-	get_tree().reload_current_scene()
+	GLOBALS.restart()
 

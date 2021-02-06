@@ -35,7 +35,8 @@ func _process(delta):
 			shoot(gun_shots, gun_spread, target)
 
 func _on_DetectRadius_body_entered(body):
-	target = body
+	if body.get_name() == "Player":
+		target = body
 
 
 func _on_DetectRadius_body_exited(body):

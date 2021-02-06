@@ -10,7 +10,7 @@ extents = Vector2( 11.3955, 13.9347 )
 
 [node name="Player" instance=ExtResource( 1 )]
 position = Vector2( 753.7, 456.14 )
-collision_layer = 2147483650
+collision_layer = 2
 collision_mask = 5
 script = ExtResource( 3 )
 Bullet = ExtResource( 4 )
@@ -30,7 +30,7 @@ position = Vector2( 0.445496, 0.222717 )
 scale = Vector2( 3.5484, -2.27501 )
 shape = SubResource( 1 )
 
-[node name="Turret" parent="." index="2"]
+[node name="Turret" parent="." index="3"]
 texture = ExtResource( 2 )
 offset = Vector2( 20, 0 )
 region_enabled = true
@@ -54,6 +54,6 @@ drag_margin_v_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Explosion" parent="." index="6"]
+[node name="Explosion" parent="." index="7"]
 scale = Vector2( 1.5, 1.5 )
 frame = 3

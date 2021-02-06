@@ -19,7 +19,7 @@ animations = [ {
 "speed": 10.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
+"loop": false,
 "name": "fire",
 "speed": 10.0
 } ]

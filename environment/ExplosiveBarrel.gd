@@ -11,8 +11,8 @@ func take_damage(amount):
 		$Smoke.emitting = false
 		$CollisionShape2D.set_deferred('disabled', true)
 		$ExplosionArea/CollisionShape2D.set_deferred('disabled', false)
-		
-		#queue_free() #do this after explosion
+		$Explosion.visible = true
+		$Explosion.play()
 		return
 		
 	if life <= 10:
@@ -25,3 +25,7 @@ func _on_ExplosionArea_body_entered(body):
 	print('body entered')
 	if body.has_method("take_damage"): 
 		body.take_damage(damage)
+
+
+func _on_Explosion_animation_finished():
+	queue_free()

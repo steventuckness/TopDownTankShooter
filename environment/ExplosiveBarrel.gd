@@ -17,10 +17,7 @@ func take_damage(amount):
 		
 	if life <= 10:
 		$Smoke.emitting = true
-		
-# TOOD: add queue_free() after explosion animation...
-
-
+	
 func _on_ExplosionArea_body_entered(body):
 	print('body entered')
 	if body.has_method("take_damage"): 

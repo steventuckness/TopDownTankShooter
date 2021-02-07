@@ -77,14 +77,12 @@ collision_mask = 2147483650
 script = ExtResource( 2 )
 
 [node name="Shadow" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.785116 )
 self_modulate = Color( 1, 1, 1, 0.588235 )
 position = Vector2( 0, 25 )
-scale = Vector2( 0.223247, 0.446172 )
+scale = Vector2( 0.25, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -3.1391 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 420, 134, 56, 56 )
@@ -100,9 +98,8 @@ anims/bounce = SubResource( 2 )
 
 [node name="Icon" type="Sprite" parent="."]
 modulate = Color( 0.231373, 0.945098, 0.0823529, 1 )
-self_modulate = Color( 1, 1, 1, 0.677674 )
 light_mask = -2147483647
 position = Vector2( 0, -85 )
-scale = Vector2( 0.667767, 0.667767 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Pickup_body_entered"]

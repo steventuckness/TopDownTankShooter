@@ -132,6 +132,7 @@ type = 11
 
 [node name="Obstacle5" parent="." instance=ExtResource( 4 )]
 position = Vector2( 158.431, 314.659 )
+type = 0
 
 [node name="Obstacle6" parent="." instance=ExtResource( 4 )]
 position = Vector2( 987.148, 407.585 )

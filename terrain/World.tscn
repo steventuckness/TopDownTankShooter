@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://terrain/terrain_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://bullets/Missile.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://tanks/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://environment/Obstacle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://terrain/Map.gd" type="Script" id=9]
+[ext_resource path="res://environment/ExplosiveBarrel.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -34,7 +35,6 @@ tile_data = PoolIntArray( -65546, 0, 0, -65545, 0, 0, -65544, 0, 0, -65543, 0, 0
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 353.122, 475.567 )
-collision_layer = 2
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -62,11 +62,6 @@ rotation = 2.9102
 [node name="EnemyTank" parent="Paths/Path2D2/PathFollow2D" instance=ExtResource( 4 )]
 offroad_friction = 0.0
 
-[node name="GunTurret" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1069.26, -37.7551 )
-rotation = 1.7539
-offroad_friction = 0.0
-
 [node name="Obstacles" type="Node2D" parent="."]
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource( 8 )]
@@ -75,25 +70,48 @@ rotation = -0.906794
 type = 10
 
 [node name="Obstacle2" parent="Obstacles" instance=ExtResource( 8 )]
-position = Vector2( 643.488, 78.7008 )
+position = Vector2( 651.983, 13.5735 )
 rotation = -0.906794
 type = 19
+
+[node name="Obstacle3" parent="Obstacles" instance=ExtResource( 8 )]
+position = Vector2( 1052.42, -140.637 )
+rotation = -1.6146
+type = 14
+
+[node name="GunTurret" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1069.26, -37.7551 )
+rotation = 1.7539
+offroad_friction = 0.0
 
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Pickup" parent="Items" instance=ExtResource( 5 )]
-position = Vector2( 755.517, 313.689 )
+position = Vector2( 744.178, 325.028 )
+type = 1
+
+[node name="Pickup7" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 1119.81, 449.39 )
 type = 1
 
 [node name="Pickup4" parent="Items" instance=ExtResource( 5 )]
-position = Vector2( 1095.46, 482.239 )
+position = Vector2( 1193.7, 844.563 )
 
 [node name="Pickup2" parent="Items" instance=ExtResource( 5 )]
-position = Vector2( 1210.78, 478.77 )
+position = Vector2( 832.224, 765.943 )
 
 [node name="Pickup3" parent="Items" instance=ExtResource( 5 )]
-position = Vector2( 1114.36, 635.95 )
+position = Vector2( 191.404, 1125.55 )
 type = 1
+
+[node name="Pickup5" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 1896.26, 895.558 )
+
+[node name="Pickup6" parent="Items" instance=ExtResource( 5 )]
+position = Vector2( 56.6965, -18.2688 )
+
+[node name="ExplosiveBarrel" parent="." instance=ExtResource( 10 )]
+position = Vector2( 889.628, 382.587 )
 [connection signal="ammo_changed" from="Player" to="Hud" method="update_ammo"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="Hud" method="update_healthbar"]
